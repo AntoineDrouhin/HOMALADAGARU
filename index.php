@@ -155,17 +155,31 @@
 											?>
 
 											 <br>Rajoutez un message : 
-                <form method="post" action="#">
+                <form method="post" action="index.php">
                
                <label for="commentaire">Message :</label>
-               <input type="text" name="commentaire"  placeholder="Ex : Alert au metro place de clichy partez. " />
+               <input type="text" class="ral" name="message"  placeholder="Ex : Alert au metro place de clichy partez. " />
                
                <input type="submit" name="submit" value="Envoyer" />
                </form>
 
 
+<?php
+if(isset($_POST['submit']))
+{
+      $username = "Thomasdu65";
+      $message = htmlspecialchars(trim($_POST['message']));
+
+      $query = mysql_query("
+
+                              INSERT INTO commentaire VALUES ('','$username','$message','$date','$heure')
+
+                         ");
 
 
+}
+
+  ?>
 
 
 
