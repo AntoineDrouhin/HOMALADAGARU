@@ -245,6 +245,61 @@ if(isset($_POST['submit']))
 				</div>
 			</div>
 		</div>
+		
+		
+							<!-- Modal du bouton inscription  -->
+		<div class="modal fade" id="inscription" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+
+					<div class="modal-header">
+						<h4>Inscription</h4> 
+					</div>
+
+					<div class="modal-body">
+						<form class="form-horizontal" method="post" action="xxx.php">
+							
+							<div class="form-group">
+								<label for="pseudo" class="col-sm-2 control-label">Pseudo</label>
+								<div class="col-sm-10">
+									<input name="pseudo" class="form-control" id="pseudo" maxlength="25" size="25" placeholder="Mike Tyson"/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="nom" class="col-sm-2 control-label">Nom</label>
+								<div class="col-sm-10">
+									<input type="nom" class="form-control" name="nom" id="nom" placeholder="Votre nom""/>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="Prenom" class="col-sm-2 control-label">Prenom</label>
+								<div class="col-sm-10">
+									<input type="Prenom" class="form-control" name="Prenom" id="Prenom" placeholder="Votre prenom
+							</div>
+
+							<div class="form-group">
+								<label for="Date de naissance" class="col-sm-2 control-label">Date de naissance</label>
+								<div class="col-sm-10">
+									<textarea name="Date de naissance" id="Date de naissance" class="form-control" rows="5" placeholder="Votre de date de naissance"></textarea>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-primary">Envoyer</button>
+								</div>
+  							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<p class="btn btn-danger" data-dismiss="modal">Fermer</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 
 		<!-- Querry needed by bootstrap -->
