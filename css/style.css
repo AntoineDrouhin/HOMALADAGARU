@@ -93,8 +93,12 @@ background-color: #F6FEFE;
 	color: red;
 }
 
-
-
+#zizi{
+	position : absolute;
+	top : 200px;
+	left:2000000px;
+	z-index : 99999;
+}
 
 
 

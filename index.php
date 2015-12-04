@@ -19,7 +19,7 @@
 	<body>
 		
 
-
+		<img id="zizi" src="img/zizi.png" />
 					<!-- Top NAVBAR -->
 			<nav class="navbar navbar-inverse navbar-fixed-top">
 				<div class="container">
@@ -230,6 +230,31 @@
     	<script src="js/bootstrap.min.js"></script>
 		<!-- Script twitter -->
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-		
+		<script type="text/javascript">
+                    var onAnim = false;
+                    function zizi(pos) {   
+                        if (onAnim) return;
+                        onAnim = true;
+                        var z = $("#zizi");
+                        var t = setInterval(function(){
+                            z.css("left", pos + "%");
+                            pos--;
+                            if (pos == -40) {
+                                onAnim = false;
+                                clearInterval(t);
+                            }
+                        },50);
+                        
+                    }
+                    $(document).ready(function() {
+                        $(window||document).bind('keypress', function(e) {
+                            
+                            var code = e.keyCode || e.which;
+                            if(code == 122) { e
+                                zizi(100);
+                            }
+                        })
+                    })
+                </script>
 	</body>
 </html>
