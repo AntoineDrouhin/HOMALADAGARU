@@ -1,0 +1,116 @@
+10,11d9
+<                 
+<                 <script src="js/jquery-1.11.3.js"></script>
+17,51c15
+<                 <script type="text/javascript">
+<                     var onAnim = false;
+<                     function zizi(pos) {   
+<                         if (onAnim) return;
+<                         onAnim = true;
+<                         var z = $("#zizi");
+<                         var t = setInterval(function(){
+<                             z.css("left", pos + "%");
+<                             pos--;
+<                             if (pos == -40) {
+<                                 onAnim = false;
+<                                 clearInterval(t);
+<                             }
+<                         },50);
+<                         
+<                     }
+<                     $(document).ready(function() {
+<                         $(window||document).bind('keypress', function(e) {
+<                             
+<                             var code = e.keyCode || e.which;
+<                             if(code == 122) { e
+<                                 zizi(100);
+<                             }
+<                         })
+<                     })
+<                 </script>
+<                 
+<                 <style type="text/css">
+<                     #zizi{
+<                         position : absolute;
+<                         top : 200px;
+<                         left:2000000px;
+<                         z-index : 99999;
+<                     }
+<                 </style>
+---
+>             
+56c20
+<             <img id="zizi" src="img/zizi.png" />
+---
+> 		
+87a52
+> 
+115c80,81
+< 								<p>            <a class="twitter-timeline"  href="https://twitter.com/Elysee" data-widget-id="672546592591884288">Tweets de @Elysee</a> </p>
+---
+> 								<p><a class="twitter-timeline"  href="https://twitter.com/Elysee" data-widget-id="672546592591884288">Tweets de @Elysee</a>
+>             </p>
+160,166c126,161
+< 							<div class="col-md-3 bleuclair modifpadding">
+< 								<div class="centrage">
+< 									<img src="img/bandages.jpeg" alt="Bandes" class="img-rounded regulated-size">
+< 								</div>
+< 								<h4>Titre</h4>
+< 								<p>Texte</p>
+< 							</div>		
+---
+> 							<div class="col-md-9 bleuclair modifpadding">
+> 								
+> 								<div class="chat">
+> 
+> 
+> 									<div class="centre">
+> 
+> 										<h2><i>Chat :</i></h2>
+> 									</div>
+> 												<?php
+> 												$date = date("d-m-Y");
+> 												$heure = date("H:i");
+> 												Print("Nous sommes le $date et il est $heure");
+> 												?><br>
+> 											<?php
+> 										    mysql_connect('localhost','root','root');
+> 										    mysql_select_db('nuitinfo');
+> 										    $reponse = mysql_query("SELECT * FROM commentaire ORDER BY commentaireid ASC ");
+> 
+> 											while ($donnees = mysql_fetch_array($reponse))
+> 												{
+> 												    ?><br><?php
+> 												    ?><u><b><?php echo $donnees['username'];?></u></b><?php
+> 												    echo ' ( le ';echo $donnees['date']; echo ' à ';echo $donnees['heure'];
+> 												    echo' ) : ';
+> 												    echo $donnees['message'];
+> 												    ?><br><?php
+> 												}
+> 
+> 											?>
+> 
+> 
+> 
+> 
+> 
+> 
+168,174d162
+< 							<div class="col-md-3 bleuclair modifpadding">
+< 								<div class="centrage">
+< 									<img src="img/chaussures.jpeg" alt="Mike Tyson" class="img-rounded regulated-size">
+< 								</div>
+< 								<h4>Titre</h4>
+< 								<p>Texte</p>
+< 							</div>
+176,178d163
+< 							<div class="col-md-3 bleuclair modifpadding">
+< 								<div class="centrage">
+< 									<img src="img/ring.jpg" alt="Ring" class="img-rounded regulated-size">
+180,181c165,167
+< 								<h4>Titre</h4>
+< 								<p>Texte</p>
+---
+> 
+> 
+> 
