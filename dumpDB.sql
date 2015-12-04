@@ -1,18 +1,25 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.10
+-- version 3.2.4
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost
--- Généré le :  Ven 04 Décembre 2015 à 02:42
--- Version du serveur :  5.5.42
--- Version de PHP :  5.6.10
+-- Serveur: localhost
+-- Généré le : Ven 04 Décembre 2015 à 02:06
+-- Version du serveur: 5.1.44
+-- Version de PHP: 5.3.1
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Base de données :  `nuitinfo`
+-- Base de données: `nuitinfo`
 --
+CREATE DATABASE `nuitinfo` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `nuitinfo`;
 
 -- --------------------------------------------------------
 
@@ -20,13 +27,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `commentaire`
 --
 
-CREATE TABLE `commentaire` (
-  `commentaireid` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `commentaire` (
+  `commentaireid` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL,
   `message` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL,
-  `heure` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+  `heure` varchar(255) NOT NULL,
+  PRIMARY KEY (`commentaireid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
 
 --
 -- Contenu de la table `commentaire`
@@ -41,22 +49,21 @@ INSERT INTO `commentaire` (`commentaireid`, `username`, `message`, `date`, `heur
 (12, 'Thomasdu65', 'guh', '04-12-2015', '02:36'),
 (13, 'Thomasdu65', 'eqdz', '04-12-2015', '02:36');
 
---
--- Index pour les tables exportées
---
+-- --------------------------------------------------------
 
 --
--- Index pour la table `commentaire`
---
-ALTER TABLE `commentaire`
-  ADD PRIMARY KEY (`commentaireid`);
-
---
--- AUTO_INCREMENT pour les tables exportées
+-- Structure de la table `contact`
 --
 
+CREATE TABLE IF NOT EXISTS `contact` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) DEFAULT NULL,
+  `mail` varchar(150) DEFAULT NULL,
+  `message` varchar(2048) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
--- AUTO_INCREMENT pour la table `commentaire`
+-- Contenu de la table `contact`
 --
-ALTER TABLE `commentaire`
-  MODIFY `commentaireid` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+
