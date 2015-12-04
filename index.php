@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include_once './global.php' 	?>
 <html lang="fr">
 	<head>
 
@@ -138,8 +139,8 @@
 												Print("Nous sommes le $date et il est $heure");
 												?><br>
 											<?php
-										    $link = mysqli_connect('localhost','root','root');
-										    mysqli_select_db($link ,'nuitinfo');
+										    $link = mysqli_connect($servername,$username,$password);
+										    mysqli_select_db($link ,$dbname);
 										    $reponse = mysqli_query($link,"SELECT * FROM commentaire ORDER BY commentaireid ASC ");
 
 											while ($donnees = mysqli_fetch_array($reponse))
@@ -208,26 +209,25 @@ if(isset($_POST['submit']))
 					</div>
 
 					<div class="modal-body">
-						<form class="form-horizontal" method="post" action="xxx.php">
-							
+						<form class="form-horizontal" method="post" action="controller/contact.php">
 							<div class="form-group">
 								<label for="pseudo" class="col-sm-2 control-label">Pseudo</label>
 								<div class="col-sm-10">
-									<input name="pseudo" class="form-control" id="pseudo" maxlength="25" size="25" placeholder="Mike Tyson"/>
+									<input name="pseudo" class="form-control" id="pseudo" maxlength="25" size="25" placeholder="Mon nom & prénom"/>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="email" class="col-sm-2 control-label">Email</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" name="email" id="email" placeholder="mike.tyson@gmail.com"/>
+									<input type="email" class="form-control" name="email" id="email" placeholder="monmail@gmail.com"/>
 								</div>
 							</div>
 
 							<div class="form-group">
 								<label for="message" class="col-sm-2 control-label">Message</label>
 								<div class="col-sm-10">
-									<textarea name="message" id="message" class="form-control" rows="5" placeholder="Salut, merci pour ton super site et bonne continuation !!!"></textarea>
+									<textarea name="message" id="message" class="form-control" rows="5" placeholder="Mon message"></textarea>
 								</div>
 							</div>
 
