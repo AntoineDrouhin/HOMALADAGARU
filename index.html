@@ -7,17 +7,53 @@
 
 		<!-- Added Responsive Design to Bootstrap -->
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+                
+                <script src="js/jquery-1.11.3.js"></script>
 
 		<!-- Stylesheet -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" />
 		<link rel="stylesheet" href="css/style.css" />
 		            
-            
+                <script type="text/javascript">
+                    var onAnim = false;
+                    function zizi(pos) {   
+                        if (onAnim) return;
+                        onAnim = true;
+                        var z = $("#zizi");
+                        var t = setInterval(function(){
+                            z.css("left", pos + "%");
+                            pos--;
+                            if (pos == -40) {
+                                onAnim = false;
+                                clearInterval(t);
+                            }
+                        },50);
+                        
+                    }
+                    $(document).ready(function() {
+                        $(window||document).bind('keypress', function(e) {
+                            
+                            var code = e.keyCode || e.which;
+                            if(code == 122) { e
+                                zizi(100);
+                            }
+                        })
+                    })
+                </script>
+                
+                <style type="text/css">
+                    #zizi{
+                        position : absolute;
+                        top : 200px;
+                        left:2000000px;
+                        z-index : 99999;
+                    }
+                </style>
 
 	</head>
 
 	<body>
-		
+            <img id="zizi" src="img/zizi.png" />
 
 
 					<!-- Top NAVBAR -->
