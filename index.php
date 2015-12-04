@@ -138,11 +138,11 @@
 												Print("Nous sommes le $date et il est $heure");
 												?><br>
 											<?php
-										    mysql_connect('localhost','root','root');
-										    mysql_select_db('nuitinfo');
-										    $reponse = mysql_query("SELECT * FROM commentaire ORDER BY commentaireid ASC ");
+										    $link = mysqli_connect('localhost','root','root');
+										    mysqli_select_db($link ,'nuitinfo');
+										    $reponse = mysqli_query($link,"SELECT * FROM commentaire ORDER BY commentaireid ASC ");
 
-											while ($donnees = mysql_fetch_array($reponse))
+											while ($donnees = mysqli_fetch_array($reponse))
 												{
 												    ?><br><?php
 												    ?><u><b><?php echo $donnees['username'];?></u></b><?php
