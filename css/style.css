@@ -76,10 +76,22 @@ background-color: #F6FEFE;
 
 }
 
+.chat{
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-right: 10px;
+	float: left;
+	height: 100%;
+	width: 100%;
+	background-color: white;
 
+}
 
-
-
+.centre{
+	text-align: center;
+	color: red;
+}
 
 
 
