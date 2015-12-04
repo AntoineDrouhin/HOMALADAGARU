@@ -154,6 +154,15 @@
 
 											?>
 
+											 <br>Rajoutez un message : 
+                <form method="post" action="#">
+               
+               <label for="commentaire">Message :</label>
+               <input type="text" name="commentaire"  placeholder="Ex : Alert au metro place de clichy partez. " />
+               
+               <input type="submit" name="submit" value="Envoyer" />
+               </form>
+
 
 
 
